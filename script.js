@@ -12,3 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+function mergePDF() {
+    document.getElementById("status").innerHTML =
+        "PDF Merge feature is coming in the next update.";
+}
