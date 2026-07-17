@@ -48,7 +48,12 @@ button{
 
 <div class="tool">
 <h2>Merge PDF</h2>
-<button>Coming Soon</button>
+<input type="file" id="pdfFiles" multiple accept=".pdf">
+<br><br>
+
+<button onclick="mergePDF()">Merge PDF</button>
+
+<p id="status"></p>
 </div>
 
 <div class="tool">
