@@ -4,71 +4,127 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToolVerse</title>
+
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
-background:#0f172a;
+}
+
+body{
+background:#0b1120;
 color:white;
-text-align:center;
 }
+
 header{
-background:#2563eb;
-padding:20px;
-font-size:30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#111827;
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:28px;
 font-weight:bold;
+color:#38bdf8;
 }
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
 .hero{
-padding:60px 20px;
+text-align:center;
+padding:80px 20px;
 }
-input{
-width:80%;
-max-width:400px;
-padding:12px;
+
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+.search{
+width:90%;
+max-width:600px;
+padding:15px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 font-size:16px;
 }
-.tools{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-padding:20px;
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
 }
-.card{
-background:#1e293b;
-padding:20px;
-border-radius:12px;
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
 }
-footer{
-padding:20px;
-background:#111827;
-margin-top:30px;
+
+nav{
+margin-top:10px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
 }
 </style>
+
 </head>
+
 <body>
 
-<header>🚀 ToolVerse</header>
+<header>
 
-<div class="hero">
+<div class="logo">🚀 ToolVerse</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#">Tools</a>
+<a href="#">Pricing</a>
+<a href="#">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
 <h1>All Online Tools in One Place</h1>
-<p>PDF • Image • AI • Calculator • Utility Tools</p>
-<input type="text" placeholder="Search tools...">
-</div>
 
-<div class="tools">
-<div class="card">📄 PDF Tools</div>
-<div class="card">🖼 Image Tools</div>
-<div class="card">🧮 Calculators</div>
-<div class="card">🤖 AI Tools</div>
-<div class="card">🔐 Password Generator</div>
-<div class="card">📱 Utility Tools</div>
-</div>
+<p>PDF • Image • AI • Utility • Calculator Tools</p>
 
-<footer>
-© 2026 ToolVerse. All Rights Reserved.
-</footer>
+<input class="search" placeholder="Search any tool...">
+
+<br>
+
+<a class="btn" href="#">Explore Tools</a>
+
+</section>
 
 </body>
 </html>
