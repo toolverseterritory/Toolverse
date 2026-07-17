@@ -125,17 +125,20 @@ font-size:34px;
 <a class="btn" href="#">Explore Tools</a>
 
 </section>
-ToolVerse/
-│── index.html
-│── style.css
-│── script.js
-│── assets/
-│   ├── logo.png
-│   ├── banner.jpg
-│── tools/
-│   ├── pdf/
-│   ├── image/
-│   ├── ai/
-│   ├── utility/
+<div class="tools">
+
+<a href="pdf.html" class="card">📄 PDF Tools</a>
+
+<a href="image.html" class="card">🖼️ Image Tools</a>
+
+<a href="calculator.html" class="card">🧮 Calculators</a>
+
+<a href="ai.html" class="card">🤖 AI Tools</a>
+
+<a href="password.html" class="card">🔐 Password Generator</a>
+
+<a href="utility.html" class="card">🛠 Utility Tools</a>
+
+</div>
 </body>
 </html>
