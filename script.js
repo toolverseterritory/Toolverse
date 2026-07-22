@@ -1,18 +1,30 @@
-function comingSoon(tool){
-    alert(tool + " feature is under development!");
-}
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll("button");
+async function mergePDF() {
+    const files = document.getElementById("pdfFiles").files;
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      if (!button.hasAttribute("onclick")) {
-        alert("🚀 This tool will be available soon!");
-      }
-    });
-  });
-});
-function mergePDF() {
-    document.getElementById("status").innerHTML =
-        "PDF Merge feature is coming in the next update.";
+    if (files.length < 2) {
+        alert("Please select at least 2 PDF files.");
+        return;
+    }
+
+    const mergedPdf = await PDFLib.PDFDocument.create();
+
+    for (const file of files) {
+        const bytes = await file.arrayBuffer();
+        const pdf = await PDFLib.PDFDocument.load(bytes);
+
+        const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+
+        pages.forEach(page => mergedPdf.addPage(page));
+    }
+
+    const mergedBytes = await mergedPdf.save();
+
+    const blob = new Blob([mergedBytes], { type: "application/pdf" });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "Merged.pdf";
+    link.click();
+
+    document.getElementById("status").innerText = "✅ PDF Merged Successfully";
 }
